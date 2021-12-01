@@ -16,6 +16,8 @@ body {
   margin: 0;
 }
 
+/* stylelint-disable */
+
 .main .todo-container {
   max-width: 50%;
   max-height: -webkit-fit-content;
