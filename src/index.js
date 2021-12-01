@@ -24,5 +24,24 @@ const tasks = [
   }
 ]
 
-// document.body.appendChild(component());
-// console.log('hello tongoona');
+const todo = document.querySelector('.todo');
+
+
+const createTodos = (todoList) => {
+  tasks.forEach((task) => {
+    todoList.innerHTML += `
+      <div class='d-todo'>
+        <input type='checkbox' />
+        <p>${task.description}</p>
+      </div>
+    `
+  });
+
+  const deleteBtn = document.createElement('div');
+  todoList.appendChild(deleteBtn);
+  deleteBtn.innerHTML += `
+    <input type='submit' value='Clear all completed' />
+  `
+}
+
+window.addEventListener('load', createTodos(todo))
