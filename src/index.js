@@ -1,5 +1,5 @@
-// import component from './component';
 import './style.css';
+import './fontawesome/css/all.css';
 
 const tasks = [
   {
@@ -33,6 +33,7 @@ const createTodos = (todoList) => {
       <div class='d-todo'>
         <input type='checkbox' />
         <p>${task.description}</p>
+        <section><i class='fas fa-ellipsis-v'></i></section>
       </div>
     `
   });

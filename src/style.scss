@@ -1,3 +1,7 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -46,10 +50,11 @@ body {
           border-right-style: hidden;
           border-left-style: hidden;
           border-bottom-style: hidden;
-          width: 60%;
+          width: 90%;
           padding-top: 1rem;
           padding-bottom: 1rem;
           font-size: 1.5rem;
+          font-style: oblique;
           padding-left: 1rem;
         }
 
@@ -68,7 +73,7 @@ body {
           border-right-style: hidden;
           border-left-style: hidden;
           border-bottom-style: hidden;
-          width: 40%;
+          width: 10%;
           padding-top: 1rem;
           padding-bottom: 1rem;
           font-size: 1.5rem;
@@ -78,7 +83,7 @@ body {
   
       .d-todo {
         display: grid;
-        grid-template-columns: 5% 70% 30%;
+        grid-template-columns: 5% 90% 5%;
         padding-top: 1rem;
         padding-bottom: 1rem;
         border-bottom: 1px solid rgb(177, 174, 174);
@@ -93,7 +98,15 @@ body {
         p {
           grid-column: 2 / span 1;
           font-size: 1.5rem;
-          margin: auto;
+          margin: auto 0 auto 2rem;
+        }
+
+        section {
+          grid-column: 3 / span 1;
+
+          i {
+            margin: auto;
+          }
         }
       }
   
