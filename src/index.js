@@ -5,27 +5,26 @@ const tasks = [
   {
     description: 'first task',
     completed: false,
-    index: 1
+    index: 1,
   },
   {
     description: 'second task',
     completed: false,
-    index: 2
+    index: 2,
   },
   {
     description: 'third task',
     completed: false,
-    index: 3
+    index: 3,
   },
   {
     description: 'fourth task',
     completed: false,
-    index: 4
-  }
-]
+    index: 4,
+  },
+];
 
 const todo = document.querySelector('.todo');
-
 
 const createTodos = (todoList) => {
   tasks.forEach((task) => {
@@ -35,14 +34,14 @@ const createTodos = (todoList) => {
         <p>${task.description}</p>
         <section><i class='fas fa-ellipsis-v'></i></section>
       </div>
-    `
+    `;
   });
 
   const deleteBtn = document.createElement('div');
   todoList.appendChild(deleteBtn);
   deleteBtn.innerHTML += `
     <input type='submit' value='Clear all completed' />
-  `
-}
+  `;
+};
 
-window.addEventListener('load', createTodos(todo))
+window.addEventListener('load', createTodos(todo));
