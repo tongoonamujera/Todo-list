@@ -46,7 +46,7 @@ export class TaskStorage {
     const form = e.target.checked;
     const value = e.target.value - 1;
 
-    form ? allTasks[value].completed = 'true' : allTasks[value].completed = 'false';
+    form ? allTasks[value].completed = true : allTasks[value].completed = false;
     localStorage.setItem('alltasks', JSON.stringify(allTasks));
   }
 }
