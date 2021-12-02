@@ -21,8 +21,9 @@ const tasks = [
   },
 ];
 
+/* eslint-disable */
 export class TaskStorage {
-  constructor (){};
+  constructor(){};
   getTask = () => {
     let allTasks;
     if (localStorage.getItem('alltasks') !== null) {
@@ -46,7 +47,6 @@ export class TaskStorage {
     const value = e.target.value - 1;
 
     form ? allTasks[value].completed = 'true' : allTasks[value].completed = 'false';
-    console.log(allTasks);
     localStorage.setItem('alltasks', JSON.stringify(allTasks));
   }
 }

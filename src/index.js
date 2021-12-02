@@ -1,7 +1,7 @@
 import './style.css';
 import './fontawesome/css/all.css';
-import { createTodos } from './htmlDisplay';
-import { TaskStorage } from './localStorage';
+import { createTodos } from './htmlDisplay.js';
+import { TaskStorage } from './localStorage.js';
 
 const todo = document.querySelector('.todo');
 

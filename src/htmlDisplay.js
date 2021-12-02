@@ -1,9 +1,8 @@
-import { TaskStorage } from './localStorage';
+import { TaskStorage } from './localStorage.js';
+/* eslint-disable */
 export const createTodos = (todoList) => {
-  let i = 0;
-  let t = '';
   const task = new TaskStorage();
-  const taskss = task.getTask()
+  const taskss = task.getTask();
   const todoDiv = document.createElement('div');
   todoDiv.classList = 'todo-body';
 
