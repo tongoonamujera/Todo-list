@@ -1,10 +1,10 @@
 # TO Do LIST
 
-> "Awesome books" is a simple website that displays a list of books and allows you to add and remove books from that list.
+> "TO DO LIST" is a project that allows users to track thier tasks, usually by changing completed tasks to completed.
 
 ## Live Demo Link
 
-[You can View live Deployment here](https://tongoonamujera.github.io/awesomeBooks/)
+[You can View live Deployment here](https://tongoonamujera.github.io/Todo-list/dist/index.html)
 
 ## Built With
 
@@ -31,7 +31,7 @@ To get a local copy up and running, follow these simple example steps.
 
 ### USAGE
 
-- user can create and remove books through usage of local storage
+- user can add tasks and mark them as completed.
 
 ### Prerequisites
 
