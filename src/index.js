@@ -1,47 +1,12 @@
 import './style.css';
 import './fontawesome/css/all.css';
-
-const tasks = [
-  {
-    description: 'first task',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'second task',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'third task',
-    completed: false,
-    index: 3,
-  },
-  {
-    description: 'fourth task',
-    completed: false,
-    index: 4,
-  },
-];
+import { createTodos } from './htmlDisplay.js';
+import { TaskStorage } from './localStorage.js';
 
 const todo = document.querySelector('.todo');
 
-const createTodos = (todoList) => {
-  tasks.forEach((task) => {
-    todoList.innerHTML += `
-      <div class='d-todo'>
-        <input type='checkbox' />
-        <p>${task.description}</p>
-        <section><i class='fas fa-ellipsis-v'></i></section>
-      </div>
-    `;
-  });
-
-  const deleteBtn = document.createElement('div');
-  todoList.appendChild(deleteBtn);
-  deleteBtn.innerHTML += `
-    <input type='submit' value='Clear all completed' />
-  `;
-};
-
-window.addEventListener('load', createTodos(todo));
+document.addEventListener('load', createTodos(todo));
+document.querySelector('.todo').addEventListener('change', (e) => {
+  const task = new TaskStorage();
+  task.changeStatus(e);
+});
