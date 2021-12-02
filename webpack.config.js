@@ -18,14 +18,6 @@ module.exports = {
   },
   devServer: {
     static: './dist',
-    compress: true,
-    historyApiFallback: true,
-    https: false,
-    open: true,
-    port: 9002,
-    proxy: {
-      '/api': 'http://localhost:9000',
-    },
   },
   module: {
     rules: [
