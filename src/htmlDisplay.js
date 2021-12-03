@@ -1,32 +1,24 @@
 import { TaskStorage } from './localStorage.js';
 /* eslint-disable */
-export const createTodos = (todoList) => {
+export const createTodos = () => {
   const task = new TaskStorage();
   const taskss = task.getTask();
-  const todoDiv = document.createElement('div');
-  todoDiv.classList = 'todo-body';
-
-  const ceck = [];
-  const other = [];
-  taskss.forEach((task) => {
-    task.completed ? ceck.push(task): other.push(task);
-    todoDiv.innerHTML += `
-      <div class='d-todo'>
-      ${ task.completed != true ? `<input type="checkbox" value="${task.index}" />` : `<input type="checkbox" value="${task.index}" checked />` }
-        <p>${task.description}</p>
-        <section><i class='fas fa-ellipsis-v'></i></section>
+  const todo = document.querySelector('.tasks-div');
+  [...taskss]
+  .forEach((task, index) => {
+    console.log(index);
+    let todoDiv = document.createElement('div');
+    todoDiv.classList = 'todo-body';
+    todoDiv.innerHTML = `
+      <div class='d-todo' draggable="true">
+      ${ task.completed != true ? `<input type="checkbox" value="${index}" />` : `<input type="checkbox" value="${index}" checked />` }
+        <p contentEditable="true" data-id="${index}">${task.description}</p>
+        <section><i class='far fa-trash-alt fa-2x' data-id="${index}"></i></section>
       </div>
     `;
+
+    todo.appendChild(todoDiv);
   });
 
-  console.log('other', other);
-  console.log('compltede', ceck);
-
-  todoList.appendChild(todoDiv);
-
-  const deleteBtn = document.createElement('div');
-  todoList.appendChild(deleteBtn);
-  deleteBtn.innerHTML += `
-    <input type='submit' value='Clear all completed' />
-  `;
+  console.log([...task.getTask()]);
 };

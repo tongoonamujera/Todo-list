@@ -1,52 +1,93 @@
-const tasks = [
-  {
-    description: 'first task',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'second task',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'third task',
-    completed: false,
-    index: 3,
-  },
-  {
-    description: 'fourth task',
-    completed: false,
-    index: 4,
-  },
-];
+const task = JSON.parse(localStorage.getItem('alltasks'));
 
 /* eslint-disable */
+const tasksi = [];
+for (const i in task) {
+  task[i].index = i;
+  tasksi.push(task[i]);
+}
+
 export class TaskStorage {
   constructor(){};
   getTask = () => {
     let allTasks;
     if (localStorage.getItem('alltasks') !== null) {
-      allTasks = JSON.parse(localStorage.getItem('alltasks'));
-    }else{
-      allTasks = [...tasks];
+      allTasks = tasksi;
+    } else {
+      allTasks = [...tasksi];
       localStorage.setItem('alltasks', JSON.stringify(allTasks));
     }
     return allTasks;
   }
 
   addTask = (task) => {
-    const allTasks = this.getTask();
+    let allTasks = this.getTask();
     allTasks.push(task);
-    localStorage.setItem('alltasks', JSON.stringify(allTasks));
+
+    const tasks = [];
+
+      for (let i in allTasks ) {
+        allTasks[i].index = i;
+        tasks.push(allTasks[i])
+      }
+    localStorage.setItem('alltasks', JSON.stringify(tasks));
   }
 
   changeStatus = (e) => {
     const allTasks = this.getTask();
     const form = e.target.checked;
-    const value = e.target.value - 1;
+    const value = e.target.value;
 
     form ? allTasks[value].completed = true : allTasks[value].completed = false;
     localStorage.setItem('alltasks', JSON.stringify(allTasks));
+  }
+
+  removeTasks = () => {
+    const allTasks = this.getTask();
+    const tasks = allTasks.filter((task) => {
+      return task.completed != true;
+    });
+
+    console.log(tasksi);
+    localStorage.setItem('alltasks',JSON.stringify(tasks));
+  }
+
+  deleteTask = (e) => {
+    const p = e.target.tagName;
+    if (p === "I") {
+      const ind = +e.target.dataset.id;
+      const allTasks = this.getTask();
+      const temp = allTasks.filter((task) => {
+        return task.index != ind;
+      });
+
+      const tasksi = [];
+      for (let i in temp ) {
+        temp[i].index = i;
+        tasksi.push(temp[i])
+      }
+
+      localStorage.setItem('alltasks', JSON.stringify(tasksi));
+      console.log(tasksi);
+      location.reload();
+    }
+  }
+
+  editTask = (e) => {
+    const p = e.target.tagName;
+    if (p === "P") {
+      const text = e.target.innerText;
+      const index = +e.target.dataset.id;
+      const allTasks = this.getTask();
+      const temp = [];
+      for (let i in allTasks) {
+        if (i == index) {
+          allTasks[index].description = text;
+        }
+        temp.push(allTasks[i]);
+      }
+      localStorage.setItem('alltasks',JSON.stringify(temp));
+      console.log(temp);
+    }
   }
 }
