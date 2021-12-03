@@ -3,6 +3,7 @@ import './fontawesome/css/all.css';
 import { createTodos } from './htmlDisplay.js';
 import { TaskStorage } from './localStorage.js';
 
+/* eslint-disable */
 document.querySelector('.form-btn').addEventListener('click', (e) => {
   const textField = document.querySelector('input[type="text"]');
   const tasks = {

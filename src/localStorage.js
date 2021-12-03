@@ -2,12 +2,12 @@ const task = JSON.parse(localStorage.getItem('alltasks'));
 
 const tasksi = [];
 
+/* eslint-disable */
 for (let i in task ) {
   task[i].index = i;
   tasksi.push(task[i])
 }
 
-/* eslint-disable */
 export class TaskStorage {
   constructor(){};
   getTask = () => {
