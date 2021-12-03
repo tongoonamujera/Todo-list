@@ -152,6 +152,7 @@ body {
 
 .main .todo-container .todo .tasks-div .todo-body .d-todo input[type='checkbox']:checked ~ p {
   text-decoration: line-through;
+  color: #0625ac;
 }
 
 .main .todo-container .todo .tasks-div .todo-body .d-todo p {

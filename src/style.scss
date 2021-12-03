@@ -121,6 +121,7 @@ body {
   
             input[type='checkbox']:checked ~ p {
               text-decoration: line-through;
+              color: rgb(6, 37, 172);
             }
   
             p {
