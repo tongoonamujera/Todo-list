@@ -1,25 +1,8 @@
-const tasks = [
-  {
-    description: 'first task',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'second task',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'third task',
-    completed: false,
-    index: 3,
-  },
-  {
-    description: 'fourth task',
-    completed: false,
-    index: 4,
-  },
-];
+const task = JSON.parse(localStorage.getItem('alltasks'));
+
+const tasks = task.forEach((taskss, i) => {
+  return taskss.index = i;
+});
 
 /* eslint-disable */
 export class TaskStorage {
@@ -44,9 +27,20 @@ export class TaskStorage {
   changeStatus = (e) => {
     const allTasks = this.getTask();
     const form = e.target.checked;
-    const value = e.target.value - 1;
+    const value = e.target.value;
 
     form ? allTasks[value].completed = true : allTasks[value].completed = false;
     localStorage.setItem('alltasks', JSON.stringify(allTasks));
+  }
+
+  removeTask = () => {
+    const allTasks = this.getTask();
+    const tasks = allTasks.filter((task) => {
+      return task.completed != true;
+    });
+
+    console.log(tasks);
+
+    localStorage.setItem('alltasks',JSON.stringify(tasks));
   }
 }

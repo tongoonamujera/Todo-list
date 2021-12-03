@@ -8,25 +8,19 @@ export const createTodos = (todoList) => {
 
   const ceck = [];
   const other = [];
-  taskss.forEach((task) => {
+  [...taskss].forEach((task, index) => {
     task.completed ? ceck.push(task): other.push(task);
     todoDiv.innerHTML += `
-      <div class='d-todo'>
-      ${ task.completed != true ? `<input type="checkbox" value="${task.index}" />` : `<input type="checkbox" value="${task.index}" checked />` }
+      <div class='d-todo' draggable="true">
+      ${ task.completed != true ? `<input type="checkbox" value="${index}" />` : `<input type="checkbox" value="${index}" checked />` }
         <p>${task.description}</p>
         <section><i class='fas fa-ellipsis-v'></i></section>
       </div>
     `;
+
+    todoList.appendChild(todoDiv);
   });
 
   console.log('other', other);
   console.log('compltede', ceck);
-
-  todoList.appendChild(todoDiv);
-
-  const deleteBtn = document.createElement('div');
-  todoList.appendChild(deleteBtn);
-  deleteBtn.innerHTML += `
-    <input type='submit' value='Clear all completed' />
-  `;
 };

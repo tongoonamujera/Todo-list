@@ -39,6 +39,7 @@ body {
 }
 
 .main .todo-container .todo .todo-body .d-todo {
+  width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 5% 90% 5%;
