@@ -54,8 +54,16 @@ export class TaskStorage {
       const temp = allTasks.filter((task) => {
         return task.index != ind;
       });
-      localStorage.setItem('alltasks', JSON.stringify(temp));
-      console.log(temp);
+
+      const tasksi = [];
+      for (let i in temp ) {
+        temp[i].index = i;
+        tasksi.push(temp[i])
+      }
+
+      localStorage.setItem('alltasks', JSON.stringify(tasksi));
+      console.log(tasksi);
+      location.reload();
     }
   }
 

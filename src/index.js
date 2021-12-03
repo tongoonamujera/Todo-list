@@ -17,6 +17,7 @@ document.querySelector('.form-btn').addEventListener('click', (e) => {
   }
   console.log(textField.value)
   e.preventDefault();
+  location.reload();
 });
 const todo = document.querySelector('.tasks-div');
 
@@ -37,7 +38,6 @@ document.querySelector('.todo').addEventListener('keyup', (e) => {
 todo.addEventListener('click', (e) => {
   const task = new TaskStorage();
   task.deleteTask(e);
-  // location.reload();
   console.log(e.target.tagName);
 });
 

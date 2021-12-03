@@ -3,14 +3,14 @@ import { TaskStorage } from './localStorage.js';
 export const createTodos = (todoList) => {
   const task = new TaskStorage();
   const taskss = task.getTask();
-  const todoDiv = document.createElement('div');
-  todoDiv.classList = 'todo-body';
-
   const ceck = [];
   const other = [];
-  [...taskss].forEach((task, index) => {
-    task.completed ? ceck.push(task): other.push(task);
-    todoDiv.innerHTML += `
+
+  [...task.getTask()]
+  .forEach((task, index) => {
+    let todoDiv = document.createElement('div');
+    todoDiv.classList = 'todo-body';
+    todoDiv.innerHTML = `
       <div class='d-todo' draggable="true">
       ${ task.completed != true ? `<input type="checkbox" value="${index}" />` : `<input type="checkbox" value="${index}" checked />` }
         <p contentEditable="true" data-id="${index}">${task.description}</p>
@@ -21,6 +21,5 @@ export const createTodos = (todoList) => {
     todoList.appendChild(todoDiv);
   });
 
-  console.log('other', other);
-  console.log('compltede', ceck);
+  console.log([...task.getTask()]);
 };
