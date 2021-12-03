@@ -15,7 +15,7 @@ export class TaskStorage {
     if (localStorage.getItem('alltasks') !== null) {
       allTasks = tasksi;
     }else{
-      allTasks = [...tasks];
+      allTasks = [...tasksi];
       localStorage.setItem('alltasks', JSON.stringify(allTasks));
     }
     return allTasks;
@@ -43,16 +43,20 @@ export class TaskStorage {
     });
 
     console.log(tasksi);
-
     localStorage.setItem('alltasks',JSON.stringify(tasks));
   }
 
   deleteTask = (e) => {
-    const allTasks = this.getTask();
-    const tasks = allTasks.filter((task) => {
-      return task.index != +e.target.value;
-    });
-    console.log(tasks);
+    const p = e.target.tagName;
+    if (p === "I") {
+      const ind = +e.target.dataset.id;
+      const allTasks = this.getTask();
+      const temp = allTasks.filter((task) => {
+        return task.index != ind;
+      });
+      localStorage.setItem('alltasks', JSON.stringify(temp));
+      console.log(temp);
+    }
   }
 
   editTask = (e) => {

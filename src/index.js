@@ -33,6 +33,13 @@ document.querySelector('.todo').addEventListener('keyup', (e) => {
   }
 });
 
+todo.addEventListener('click', (e) => {
+  const task = new TaskStorage();
+  task.deleteTask(e);
+  // location.reload();
+  console.log(e.target.tagName);
+});
+
 document.querySelector('.delete-btn').addEventListener('click', () => {
   const task = new TaskStorage();
   task.removeTasks();
