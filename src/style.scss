@@ -34,7 +34,7 @@ body {
         .d-todo {
           width: 100%;
           display: grid;
-          grid-template-columns: 5% 90% 5%;
+          grid-template-columns: 5% 88% 7%;
           padding-top: 1rem;
           padding-bottom: 1rem;
           border-bottom: 1px solid rgb(177, 174, 174);
@@ -189,7 +189,7 @@ body {
   
           .d-todo {
             display: grid;
-            grid-template-columns: 5% 90% 5%;
+            grid-template-columns: 5% 70% 20%;
             padding-top: 1rem;
             padding-bottom: 1rem;
             border-bottom: 1px solid rgb(177, 174, 174);
@@ -215,7 +215,7 @@ body {
               grid-column: 3 / span 1;
     
               i {
-                margin: auto;
+                margin: auto 80% auto auto;
               }
             }
           }
@@ -337,7 +337,7 @@ body {
   
           .d-todo {
             display: grid;
-            grid-template-columns: 5% 90% 5%;
+            grid-template-columns: 5% 85% 10%;
             padding-top: 1rem;
             padding-bottom: 1rem;
             border-bottom: 1px solid rgb(177, 174, 174);

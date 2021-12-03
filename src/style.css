@@ -42,8 +42,8 @@ body {
   width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 5% 90% 5%;
-      grid-template-columns: 5% 90% 5%;
+  -ms-grid-columns: 5% 88% 7%;
+      grid-template-columns: 5% 88% 7%;
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #b1aeae;
@@ -210,8 +210,8 @@ body {
   .main .todo-container .todo .todo-body .d-todo {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 5% 90% 5%;
-        grid-template-columns: 5% 90% 5%;
+    -ms-grid-columns: 5% 70% 20%;
+        grid-template-columns: 5% 70% 20%;
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #b1aeae;
@@ -240,7 +240,7 @@ body {
     grid-column: 3 / span 1;
   }
   .main .todo-container .todo .todo-body .d-todo section i {
-    margin: auto;
+    margin: auto 80% auto auto;
   }
   .main .todo-container .todo .heading {
     width: 100%;
@@ -357,8 +357,8 @@ body {
   .main .todo-container .todo .todo-body .d-todo {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 5% 90% 5%;
-        grid-template-columns: 5% 90% 5%;
+    -ms-grid-columns: 5% 85% 10%;
+        grid-template-columns: 5% 85% 10%;
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #b1aeae;
