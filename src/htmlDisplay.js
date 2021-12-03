@@ -1,13 +1,12 @@
 import { TaskStorage } from './localStorage.js';
 /* eslint-disable */
-export const createTodos = (todoList) => {
+export const createTodos = () => {
   const task = new TaskStorage();
   const taskss = task.getTask();
-  const ceck = [];
-  const other = [];
-  if (taskss){
+  const todo = document.querySelector('.tasks-div');
   [...taskss]
   .forEach((task, index) => {
+    console.log(index);
     let todoDiv = document.createElement('div');
     todoDiv.classList = 'todo-body';
     todoDiv.innerHTML = `
@@ -18,9 +17,8 @@ export const createTodos = (todoList) => {
       </div>
     `;
 
-    todoList.appendChild(todoDiv);
+    todo.appendChild(todoDiv);
   });
-}
 
   console.log([...task.getTask()]);
 };

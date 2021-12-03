@@ -25,16 +25,12 @@ export class TaskStorage {
     let allTasks = this.getTask();
     allTasks.push(task);
 
-    // const tasks = [];
+    const tasks = [];
 
-    // if (localStorage.length < 1){
-    //   allTasks = [...task];
-    // } else {
-    //   for (let i in allTasks ) {
-    //     allTasks[i].index = i;
-    //     tasks.push(allTasks[i])
-    //   }
-    // }
+      for (let i in allTasks ) {
+        allTasks[i].index = i;
+        tasks.push(allTasks[i])
+      }
     localStorage.setItem('alltasks', JSON.stringify(tasks));
   }
 
