@@ -1,12 +1,12 @@
 const task = JSON.parse(localStorage.getItem('alltasks'));
 
 const tasksi = [];
-
-/* eslint-disable */
-for (let i in task ) {
+for (let i in task) {
   task[i].index = i;
   tasksi.push(task[i])
 }
+
+/* eslint-disable */
 
 export class TaskStorage {
   constructor(){};
@@ -14,7 +14,7 @@ export class TaskStorage {
     let allTasks;
     if (localStorage.getItem('alltasks') !== null) {
       allTasks = tasksi;
-    }else{
+    } else {
       allTasks = [...tasksi];
       localStorage.setItem('alltasks', JSON.stringify(allTasks));
     }
@@ -22,9 +22,20 @@ export class TaskStorage {
   }
 
   addTask = (task) => {
-    const allTasks = this.getTask();
+    let allTasks = this.getTask();
     allTasks.push(task);
-    localStorage.setItem('alltasks', JSON.stringify(allTasks));
+
+    // const tasks = [];
+
+    // if (localStorage.length < 1){
+    //   allTasks = [...task];
+    // } else {
+    //   for (let i in allTasks ) {
+    //     allTasks[i].index = i;
+    //     tasks.push(allTasks[i])
+    //   }
+    // }
+    localStorage.setItem('alltasks', JSON.stringify(tasks));
   }
 
   changeStatus = (e) => {

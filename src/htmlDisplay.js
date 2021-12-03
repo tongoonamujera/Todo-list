@@ -5,8 +5,8 @@ export const createTodos = (todoList) => {
   const taskss = task.getTask();
   const ceck = [];
   const other = [];
-
-  [...task.getTask()]
+  if (taskss){
+  [...taskss]
   .forEach((task, index) => {
     let todoDiv = document.createElement('div');
     todoDiv.classList = 'todo-body';
@@ -20,6 +20,7 @@ export const createTodos = (todoList) => {
 
     todoList.appendChild(todoDiv);
   });
+}
 
   console.log([...task.getTask()]);
 };
