@@ -25,8 +25,16 @@ document.querySelector('.todo').addEventListener('change', (e) => {
   task.changeStatus(e);
 });
 
+document.querySelector('.todo').addEventListener('keyup', (e) => {
+  const task = new TaskStorage();
+  if (e.keyCode == 13){
+    task.editTask(e);
+    location.reload();
+  }
+});
+
 document.querySelector('.delete-btn').addEventListener('click', () => {
   const task = new TaskStorage();
-  task.removeTask();
-  console.log('cliked');
+  task.removeTasks();
+  location.reload();
 });

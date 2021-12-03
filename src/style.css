@@ -70,6 +70,14 @@ body {
   margin: auto 0 auto 2rem;
 }
 
+.main .todo-container .todo .todo-body .d-todo p:focus {
+  outline: white;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
 .main .todo-container .todo .todo-body .d-todo section {
   -ms-grid-column: 3;
   -ms-grid-column-span: 1;

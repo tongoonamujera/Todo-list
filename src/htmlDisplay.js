@@ -13,7 +13,7 @@ export const createTodos = (todoList) => {
     todoDiv.innerHTML += `
       <div class='d-todo' draggable="true">
       ${ task.completed != true ? `<input type="checkbox" value="${index}" />` : `<input type="checkbox" value="${index}" checked />` }
-        <p>${task.description}</p>
+        <p contentEditable="true" data-id="${index}">${task.description}</p>
         <section><i class='fas fa-ellipsis-v'></i></section>
       </div>
     `;

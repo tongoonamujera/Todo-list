@@ -55,6 +55,14 @@ body {
             font-size: 1.5rem;
             margin: auto 0 auto 2rem;
           }
+
+          p:focus {
+            outline: white;
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-style: hidden;
+          }
   
           section {
             grid-column: 3 / span 1;
