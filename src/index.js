@@ -11,6 +11,7 @@ document.querySelector('.form-btn').addEventListener('click', (e) => {
   completed: false,
   index: 0,
   }
+
   const task = new TaskStorage();
   if (tasks.description) {
   task.addTask(tasks)
