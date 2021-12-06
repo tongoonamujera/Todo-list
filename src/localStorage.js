@@ -1,15 +1,14 @@
-const task = JSON.parse(localStorage.getItem('alltasks'));
-
 /* eslint-disable */
-const tasksi = [];
-for (const i in task) {
-  task[i].index = i;
-  tasksi.push(task[i]);
-}
-
 export class TaskStorage {
   constructor(){};
   getTask = () => {
+    const task = JSON.parse(localStorage.getItem('alltasks'));
+
+    const tasksi = [];
+    for (const i in task) {
+      task[i].index = i;
+      tasksi.push(task[i]);
+    }
     let allTasks;
     if (localStorage.getItem('alltasks') !== null) {
       allTasks = tasksi;
@@ -48,7 +47,6 @@ export class TaskStorage {
       return task.completed != true;
     });
 
-    console.log(tasksi);
     localStorage.setItem('alltasks',JSON.stringify(tasks));
   }
 
@@ -68,7 +66,6 @@ export class TaskStorage {
       }
 
       localStorage.setItem('alltasks', JSON.stringify(tasksi));
-      console.log(tasksi);
       location.reload();
     }
   }
@@ -80,6 +77,7 @@ export class TaskStorage {
       const index = +e.target.dataset.id;
       const allTasks = this.getTask();
       const temp = [];
+
       for (let i in allTasks) {
         if (i == index) {
           allTasks[index].description = text;
@@ -87,7 +85,6 @@ export class TaskStorage {
         temp.push(allTasks[i]);
       }
       localStorage.setItem('alltasks',JSON.stringify(temp));
-      console.log(temp);
     }
   }
 }
