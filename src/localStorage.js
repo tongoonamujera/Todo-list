@@ -1,5 +1,5 @@
 /* eslint-disable */
-export class TaskStorage {
+export default class TaskStorage {
   constructor(){};
   getTask = () => {
     const task = JSON.parse(localStorage.getItem('alltasks'));
