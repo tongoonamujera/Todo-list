@@ -49,6 +49,12 @@ To get a local copy up and running, follow these simple example steps.
 - Linkedin: [tongoona-mujera](https://www.linkedin.com/in/tongoona-mujera-125604162/)
 - Email:  tongoonamujera@gmail.com
 
+👤 **Ricky Mormor**
+- LinkedIn: [Ricky Mormor](https://www.linkedin.com/in/ricky-mormor)
+- Frontend Mentor - [@cwaku](https://www.frontendmentor.io/profile/cwaku)
+- Instagram - [@rickymormor](https://www.instagram.com/rickymormor/)
+- GitHub: [@cwaku](https://github.com/cwaku)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
