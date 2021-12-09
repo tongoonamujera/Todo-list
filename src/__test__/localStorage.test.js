@@ -36,6 +36,7 @@ describe('LocalStorage', () => {
   });
 
   test('should return length of localStorage', () => {
+    // eslint-disable-next-line no-underscore-dangle
     expect(Object.keys(localStorage.__STORE__).length).toBe(localStorage.length);
   });
 

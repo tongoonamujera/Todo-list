@@ -4,6 +4,7 @@ const MockStorage = () => {
     setItem(key, value) {
       storage[key] = value || '';
     },
+    // eslint-disable-next-line no-unused-vars
     getItem(key, value) {
       return key in storage ? storage[key] : null;
     },
