@@ -2,12 +2,9 @@
  * @jest-environment jsdom
  */
 
-import TaskStorage from '../localStorage';
-import MockStorage from '../__mocks__/StorageMock';
+import { TaskStorage } from '../localStorage';
 
-describe('clases should return objects', () =>{
-  window.localStorage = MockStorage;
-  window.sessionStorage = MockStorage;
+describe('LocalStorage', () =>{
   const tasks = {
     description: 'tongoona',
     completed: false,
@@ -15,7 +12,13 @@ describe('clases should return objects', () =>{
   };
 
   const func = new TaskStorage;
-  const Mockfn = jest.fn(func.addTask(tasks));
+
+  test('getTask function should work', () => {
+    const Mockfn = jest.spyOn(func,'getTask');
+    func.getTask();
+    expect(Mockfn).toBeCalled();
+  });
+
   test('should be a object', () => {
     expect(typeof func.getTask()).toBe('object');
   });
@@ -24,12 +27,20 @@ describe('clases should return objects', () =>{
     expect(typeof func.addTask(tasks)).toBe('undefined');
   });
 
-  test('should not be called', () => {
-    expect(Mockfn).not.toHaveBeenCalled();
-  });
-
   test('should not return anything other than undefined if no localStorage defined', () => {
     expect(typeof func.addTask(tasks)).not.toBe('object');
+  });
+
+  test('should save to localStorage', () => {
+    expect(localStorage.setItem).toHaveBeenCalled();
+  });
+
+  test('should return length of localStorage', () => {
+    expect(Object.keys(localStorage.__STORE__).length).toBe(localStorage.length)
+  });
+
+  test('should be querry for items in localStorage', () => {
+    expect(localStorage.getItem).toHaveBeenCalledWith('alltasks');
   });
 
   test('removing tasks should return undefined if no localStorage defined', () => {
