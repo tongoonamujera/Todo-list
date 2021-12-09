@@ -2,19 +2,19 @@
  * @jest-environment jsdom
  */
 
-import { TaskStorage } from '../localStorage';
+import { TaskStorage } from '../localStorage.js';
 
-describe('LocalStorage', () =>{
+describe('LocalStorage', () => {
   const tasks = {
     description: 'tongoona',
     completed: false,
     index: 0,
   };
 
-  const func = new TaskStorage;
+  const func = new TaskStorage();
 
   test('getTask function should work', () => {
-    const Mockfn = jest.spyOn(func,'getTask');
+    const Mockfn = jest.spyOn(func, 'getTask');
     func.getTask();
     expect(Mockfn).toBeCalled();
   });
@@ -36,7 +36,9 @@ describe('LocalStorage', () =>{
   });
 
   test('should return length of localStorage', () => {
-    expect(Object.keys(localStorage.__STORE__).length).toBe(localStorage.length)
+    expect(Object.keys(localStorage.__STORE__).length).toBe(
+      localStorage.length
+    );
   });
 
   test('should be querry for items in localStorage', () => {
@@ -46,10 +48,12 @@ describe('LocalStorage', () =>{
   test(' getTask should be querry for items in localStorage', () => {
     const arr = [];
     arr[0] = tasks;
-    arr[0].index = 1
+    arr[0].index = 1;
     expect(func.getTask()).toEqual(
-      expect.arrayContaining([{"completed": false, "description": "tongoona", "index": "0"}, 
-      {"completed": false, "description": "tongoona", "index": "1"}])
+      expect.arrayContaining([
+        { completed: false, description: 'tongoona', index: '0' },
+        { completed: false, description: 'tongoona', index: '1' },
+      ])
     );
   });
 
