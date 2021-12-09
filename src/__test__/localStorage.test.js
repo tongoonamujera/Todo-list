@@ -36,9 +36,7 @@ describe('LocalStorage', () => {
   });
 
   test('should return length of localStorage', () => {
-    expect(Object.keys(localStorage.__STORE__).length).toBe(
-      localStorage.length
-    );
+    expect(Object.keys(localStorage._STORE_).length).toBe(localStorage.length);
   });
 
   test('should be querry for items in localStorage', () => {
@@ -53,7 +51,7 @@ describe('LocalStorage', () => {
       expect.arrayContaining([
         { completed: false, description: 'tongoona', index: '0' },
         { completed: false, description: 'tongoona', index: '1' },
-      ])
+      ]),
     );
   });
 
