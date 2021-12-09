@@ -43,6 +43,16 @@ describe('LocalStorage', () =>{
     expect(localStorage.getItem).toHaveBeenCalledWith('alltasks');
   });
 
+  test(' getTask should be querry for items in localStorage', () => {
+    const arr = [];
+    arr[0] = tasks;
+    arr[0].index = 1
+    expect(func.getTask()).toEqual(
+      expect.arrayContaining([{"completed": false, "description": "tongoona", "index": "0"}, 
+      {"completed": false, "description": "tongoona", "index": "1"}])
+    );
+  });
+
   test('removing tasks should return undefined if no localStorage defined', () => {
     expect(typeof func.removeTasks()).toBe('undefined');
   });
