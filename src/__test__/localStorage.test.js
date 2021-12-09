@@ -36,7 +36,7 @@ describe('LocalStorage', () => {
   });
 
   test('should return length of localStorage', () => {
-    expect(Object.keys(localStorage._STORE_).length).toBe(localStorage.length);
+    expect(Object.keys(localStorage.STORE).length).toBe(localStorage.length);
   });
 
   test('should be querry for items in localStorage', () => {

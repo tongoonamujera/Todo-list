@@ -1,13 +1,13 @@
 const MockStorage = () => {
-  let storage = {};
+  const storage = {};
   return {
-    setItem: function (key, value) {
+    setItem (key, value) {
       storage[key] = value || '';
     },
-    getItem: function (key, value) {
+    getItem (key, value) {
       return key in storage ? storage[key] : null;
     },
-    key: function (i) {
+    key (i) {
       const keys = Object.keys(storage);
       return keys[i] || null;
     },
