@@ -3,6 +3,7 @@
  */
 
 import { TaskStorage } from '../localStorage.js';
+import { createTodo } from '../htmlDisplay'
 
 describe('LocalStorage', () => {
   const tasks = {
@@ -17,6 +18,12 @@ describe('LocalStorage', () => {
     const Mockfn = jest.spyOn(func, 'getTask');
     func.getTask();
     expect(Mockfn).toBeCalled();
+  });
+
+  test('getTask function should work', () => {
+    const spyFn = jest.spyOn(func, 'removeTasks');
+    func.removeTasks();
+    expect(spyFn).toBeCalled();
   });
 
   test('should be a object', () => {
