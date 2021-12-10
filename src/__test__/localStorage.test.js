@@ -21,7 +21,7 @@ describe('LocalStorage', () => {
   });
 
   test('getTask function should work', () => {
-    const spyFn = jest.spyOn(func, 'removeTasks');
+    const spyFn = jest.spyOn(func, "removeTasks");
     func.removeTasks();
     expect(spyFn).toBeCalled();
   });
