@@ -3,7 +3,7 @@
  */
 
 import { TaskStorage } from '../localStorage.js';
-import { createTodo } from '../htmlDisplay'
+import { createTodos } from '../htmlDisplay.js'
 
 describe('LocalStorage', () => {
   const tasks = {
