@@ -77,7 +77,7 @@ describe('Edit task to localStorage', () => {
   };
 
   test('tasks should be editable', () => {
-    const text = 'mujera'
+    const text = 'mujera';
     const last = editTask(tasks, text);
     expect(last[0].description).toBe('mujera');
   });
@@ -92,7 +92,7 @@ describe('Change task status to localStorage', () => {
 
   test('completed should change value after changeStatus function called', () => {
     expect(changeStatus(tasks)).toEqual(
-      { 'description': 'tongoona', 'completed': true, 'index': 0 }
+      { description: 'tongoona', completed: true, index: 0, }
     );
   });
 });
