@@ -5,6 +5,7 @@
 import { TaskStorage } from '../localStorage.js';
 // eslint-disable-next-line no-unused-vars
 import { createTodos } from '../htmlDisplay.js';
+import changeStatus from '../__mocks__/ChangeTaskStatus.js';
 
 describe('LocalStorage', () => {
   const tasks = {
@@ -62,6 +63,10 @@ describe('LocalStorage', () => {
         { completed: false, description: 'tongoona', index: '1' },
       ]),
     );
+  });
+
+  test('completed should change value after being changed', () => {
+    expect(changeStatus(tasks)).toEqual({ 'description': 'tongoona', 'completed': true, 'index': 1 });
   });
 
   test('removing tasks should return undefined if no localStorage defined', () => {
