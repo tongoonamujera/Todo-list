@@ -3,7 +3,7 @@
  */
 
 import { TaskStorage } from '../localStorage.js';
-//eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line no-unused-vars
 import { createTodos } from '../htmlDisplay.js';
 
 describe('LocalStorage', () => {
