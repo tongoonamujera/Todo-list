@@ -3,8 +3,6 @@
  */
 
 import { TaskStorage } from '../localStorage.js';
-// eslint-disable-next-line no-unused-vars
-import { createTodos } from '../htmlDisplay.js';
 import changeStatus from '../__mocks__/ChangeTaskStatus.js';
 import editTask from '../__mocks__/EditTasks.js';
 
