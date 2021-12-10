@@ -3,7 +3,8 @@
  */
 
 import { TaskStorage } from '../localStorage.js';
-import { createTodos } from '../htmlDisplay.js'
+//eslint-disable-next-line no-unused-vars
+import { createTodos } from '../htmlDisplay.js';
 
 describe('LocalStorage', () => {
   const tasks = {
@@ -21,7 +22,7 @@ describe('LocalStorage', () => {
   });
 
   test('getTask function should work', () => {
-    const spyFn = jest.spyOn(func, "removeTasks");
+    const spyFn = jest.spyOn(func, 'removeTasks');
     func.removeTasks();
     expect(spyFn).toBeCalled();
   });
