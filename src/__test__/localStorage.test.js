@@ -22,7 +22,7 @@ describe('LocalStorage', () => {
     expect(Mockfn).toBeCalled();
   });
 
-  test('getTask function should work', () => {
+  test('Remove tasks function should work and clear tasks completed', () => {
     const spyFn = jest.spyOn(func, 'removeTasks');
     func.removeTasks();
     expect(spyFn).toBeCalled();
@@ -65,7 +65,7 @@ describe('LocalStorage', () => {
     );
   });
 
-  test('completed should change value after being changed', () => {
+  test('completed should change value after changeStatus function called', () => {
     expect(changeStatus(tasks)).toEqual({ 'description': 'tongoona', 'completed': true, 'index': 1 });
   });
 

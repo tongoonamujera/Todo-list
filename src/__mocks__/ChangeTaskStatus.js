@@ -6,6 +6,7 @@ const changeStatus = (task) => {
     task.completed = true;
     return task;
   }
+
 }
 
 export default changeStatus;
