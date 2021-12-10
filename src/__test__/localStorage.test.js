@@ -6,6 +6,7 @@ import { TaskStorage } from '../localStorage.js';
 // eslint-disable-next-line no-unused-vars
 import { createTodos } from '../htmlDisplay.js';
 import changeStatus from '../__mocks__/ChangeTaskStatus.js';
+import editTask from '../__mocks__/EditTasks.js';
 
 describe('LocalStorage', () => {
   const tasks = {
@@ -53,7 +54,7 @@ describe('LocalStorage', () => {
     expect(localStorage.getItem).toHaveBeenCalledWith('alltasks');
   });
 
-  test(' getTask should be querry for items in localStorage', () => {
+  test(' getTask should querry for items in localStorage', () => {
     const arr = [];
     arr[0] = tasks;
     arr[0].index = 1;
@@ -65,11 +66,35 @@ describe('LocalStorage', () => {
     );
   });
 
-  test('completed should change value after changeStatus function called', () => {
-    expect(changeStatus(tasks)).toEqual({ 'description': 'tongoona', 'completed': true, 'index': 1 });
-  });
-
   test('removing tasks should return undefined if no localStorage defined', () => {
     expect(typeof func.removeTasks()).toBe('undefined');
+  });
+});
+
+describe('Edit task to localStorage', () => {
+  const tasks = {
+    description: 'tongoona',
+    completed: false,
+    index: 0,
+  };
+
+  test('tasks should be editable', () => {
+    const text = 'mujera'
+    const last = editTask(tasks, text);
+    expect(last[0].description).toBe('mujera');
+  });
+});
+
+describe('Change task status to localStorage', () => {
+  const tasks = {
+    description: 'tongoona',
+    completed: false,
+    index: 0,
+  };
+
+  test('completed should change value after changeStatus function called', () => {
+    expect(changeStatus(tasks)).toEqual(
+      { 'description': 'tongoona', 'completed': true, 'index': 0 }
+    );
   });
 });
