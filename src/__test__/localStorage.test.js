@@ -90,9 +90,10 @@ describe('Change task status to localStorage', () => {
     index: 0,
   };
 
+  /* eslint-disable */
   test('completed should change value after changeStatus function called', () => {
     expect(changeStatus(tasks)).toEqual(
-      { description: 'tongoona', completed: true, index: 0, }
+      { description: 'tongoona', completed: true, index: 0 }
     );
   });
 });
