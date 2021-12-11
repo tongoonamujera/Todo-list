@@ -1,7 +1,6 @@
 import { TaskStorage } from './localStorage.js';
 /* eslint-disable */
-export const createTodos = () => {
-  const todo = document.querySelector('.tasks-div');
+export const createTodos = (todo) => {
   const task = new TaskStorage();
   const tasks = task.getTask();
 

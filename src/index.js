@@ -21,7 +21,9 @@ document.querySelector('.form-btn').addEventListener('click', (e) => {
   location.reload();
 });
 
-document.addEventListener('load', createTodos());
+const todo = document.querySelector('.tasks-div');
+
+document.addEventListener('load', createTodos(todo));
 document.querySelector('.todo').addEventListener('change', (e) => {
   const task = new TaskStorage();
   task.changeStatus(e);
@@ -35,7 +37,7 @@ document.querySelector('.todo').addEventListener('keyup', (e) => {
   }
 });
 
-const todo = document.querySelector('.tasks-div');
+// const todo = document.querySelector('.tasks-div');
 
 todo.addEventListener('click', (e) => {
   const task = new TaskStorage();
